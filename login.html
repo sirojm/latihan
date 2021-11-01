@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
     <script src="https://kit.fontawesome.com/87bcb74da6.js" crossorigin="anonymous"></script>
     <title>latihan</title>
 </head>
@@ -16,12 +17,13 @@
             <form action="#">
                 <div class="field stroke">
                     <span class="fas fa-user"></span>
-                    <input type="text" required placeholder="username">
+                    <input type="text" required placeholder="nip/nitk/nim">
                 </div>
                 <div class="field stroke space">
                     <span class="fas fa-lock"></span>
                     <input type="password" class="password" required placeholder="password">
-                    <i class="show fas fa-eye"></i>
+                    <span class="show"><i class="fas fa-eye"></i></span>
+                    <span class="hide_btn"><i class="fas fa-eye-slash"></i></span>
                     <!-- <i class="hidden fas fa-eye-slash"></i> -->
                 </div>
                 <div class="forgot" herf="#">
@@ -44,6 +46,6 @@
             </form>
         </div>
     </div>
-    
+    <script src="apps.js"></script>
 </body>
 </html>

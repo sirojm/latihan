@@ -119,22 +119,16 @@ input[type="submit"]:hover{
 .apple:hover{
     background-color: rgba(163, 229, 189, 0.2);
 }
-.show{
+.show, .hide_btn {
     position: absolute;
-    right: 13px;
+    right: 4px;
     font-size: 14px;
     color: rgb(82, 82, 82);
-    line-height: 45px;
     cursor: pointer;
     display: none;
 }
 .password:valid ~ .show{
     display: block;
 }
-/* .submit{
-    color: white;
-    background-color: #19BF5B;
-    border-radius: 25px;
-    margin-top: 28px;
-    #2fc56b
-} */
+
+

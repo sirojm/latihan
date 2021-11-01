@@ -60,11 +60,12 @@
 }
 .field span{
     color: rgb(82, 82, 82);
-    width: 28px;
+    width: 38px;
     line-height: 45px;
+    font-size: 12px;
 }
 .space{
-    margin-top: 14px;    
+    margin-top: 12px;    
 }
 .forgot{
     font-size: 12px;

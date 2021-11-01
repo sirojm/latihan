@@ -16,11 +16,13 @@
             <form action="#">
                 <div class="field stroke">
                     <span class="fas fa-user"></span>
-                    <input type="text" placeholder="username">
+                    <input type="text" required placeholder="username">
                 </div>
                 <div class="field stroke space">
                     <span class="fas fa-lock"></span>
-                    <input type="password" placeholder="password">
+                    <input type="password" class="password" required placeholder="password">
+                    <i class="show fas fa-eye"></i>
+                    <!-- <i class="hidden fas fa-eye-slash"></i> -->
                 </div>
                 <div class="forgot" herf="#">
                     <a href="#">Lupa Kata Sandi</a>
@@ -28,12 +30,16 @@
                 <div class="field submit">
                     <input type="submit" value="Login">
                 </div>
-                <div class="or">
-                    <span>------------------- Or -------------------</span>
-                </div>
-                <div class="login-alternatif">
-                    <img src="img/G__Logo.svg" alt="">
-                    <img src="img/apple_logo.svg" alt="">
+                <div class="login">Or login with</div>
+                <div class="link">
+                    <div class="google">
+                        <!-- <i class="fab fa-google"></i> -->
+                        <img src="img/G__Logo.svg" alt="">
+                    </div>
+                    <div class="apple">
+                        <!-- <i class="fab fa-apple"></i> -->
+                        <img src="img/apple_logo.svg" alt="">
+                    </div>
                 </div>
             </form>
         </div>

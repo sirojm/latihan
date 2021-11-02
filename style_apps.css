@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background: #fff;
+    padding: 6px 14px;
+    border-right: 1px solid #222;
+}
+.logo_content, .logo_name{
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+.logo_img{
+    width: 50px;
+    height: 50px;
+}
+.namaLogo{
+    /* padding: 6px 10px; */
+    margin-left: 12px;
+    line-height: 24px;
+    color: #222;
+}
+.namaLogo h6{
+    font-weight: 600;
+    line-height: 12px;
+}
+.sidebar #btn_menu{
+    position: absolute;
+    left: 90%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+.sidebar ul{
+    margin-top: 48px;
+}
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style-type: none;
+    line-height: 50px;
+}
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgb(246, 246, 246, 0.6);
+    padding-left: 50px;
+}
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    font-size: 22px;
+
+}
+.sidebar ul li a{
+    color: #222;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    border-radius: 12px;
+}
+.sidebar ul li a:hover{
+    background: rgba(28, 172, 86, 0.4);
+
+}
+.links_name{
+    font-size: 16px;
+}
+.sidebar ul li i{
+    height: 50%;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .profile_content{
+    position: absolute;
+    color: #222;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #19BF5B;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+}
+.profile_content .profile .profile_detail{
+    display: flex;
+    align-items: center;
+}
+.profile .profile_detail img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.profile .profile_detail .profile_nama{
+    margin-left: 10px;
+    align-items: center;
+}
+.profile .profile_detail .nama{
+    font-size: 16px;
+    font-weight: 600;
+}
+.profile .profile_detail .status{
+    font-size: 12px;
+}
+.profile #log_out{
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+/* toggle */
+.toggle{
+    background: #000;
+    /* position: relative;
+    left: 88%;
+    transform: translateX(-50%); */
+}
+
+/* toggle */

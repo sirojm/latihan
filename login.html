@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,25 @@
     <link rel="stylesheet" href="./responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://kit.fontawesome.com/87bcb74da6.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>latihan</title>
 </head>
+
 <body>
     <div id="login" class="bg-login">
         <div class="content">
             <header>
                 <img class="logo" src="img/logo.png" alt="">
             </header>
-            <form action="#">
+            <form @submit.prevent="proses_login">
                 <div class="field stroke">
                     <span class="fas fa-user"></span>
-                    <input type="text" required placeholder="nip/nitk/nim">
+                    <input type="text" placeholder="nip/nitk/nim/email" v-model="user" ref="user">
                 </div>
                 <div class="field stroke space">
                     <span class="fas fa-lock"></span>
-                    <input v-model="pass" @focus="aksiterlihat" @blur="aksiTidakTerlihat" :type="melek?'password':'text'" class="password" required placeholder="password">
+                    <input v-model="pass" @focus="aksiterlihat" @blur="aksiTidakTerlihat"
+                        :type="melek?'password':'text'" class="password" placeholder="password" ref="pass">
                     <span v-show="melek" @click="aksimerem" class="show"><i class="fas fa-eye"></i></span>
                     <span v-show="merem" @click="aksimelek" class="hide_btn"><i class="fas fa-eye-slash"></i></span>
                     <!-- <i class="hidden fas fa-eye-slash"></i> -->
@@ -47,45 +51,92 @@
             </form>
         </div>
     </div>
-    <script> 
-        new Vue({ 
-            el: "#login", 
-            mounted() { 
-                 
-            }, 
-            data() { 
-                return { 
+    <script>
+        new Vue({
+            el: "#login",
+            mounted() {
+                this.$refs.user.focus();
+            },
+            data() {
+                return {
                     melek: false,
                     merem: false,
-                    pass: "", 
-                }; 
-            }, 
-            computed: { 
-            }, 
-            methods: { 
-                aksiterlihat(){
-                    this.melek=true
-                    this.merem=false
-                },
-                aksiTidakTerlihat(){
-                    if(this.pass===""){
-                        this.melek=false
-                        this.merem=false
+                    user: '',
+                    pass: "",
+                };
+            },
+            computed: {
+            },
+            methods: {
+                proses_login() {
+                    if (this.user.trim() === '') {
+                        this.$refs.user.focus();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Kolom Ini Wajib Diisi',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else if (this.pass.trim() === '') {
+                        this.$refs.pass.focus();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Password Wajib Diisi',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else {
+                        let timerInterval
+                        Swal.fire({
+                            title: 'Auto close alert!',
+                            html: 'I will close in <b></b> milliseconds.',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                // console.log('I was closed by the timer')
+                                window.location.href = " https://www.xvideos.com/tags/youjizz";
+                            }
+                        })
                     }
                 },
-                aksimerem(){
-                    this.melek=false
-                    this.merem=true
+                aksiterlihat() {
+                    this.melek = true
+                    this.merem = false
                 },
-                aksimelek(){
-                    this.melek=true
-                    this.merem=false
+                aksiTidakTerlihat() {
+                    if (this.pass === "") {
+                        this.melek = false
+                        this.merem = false
+                    }
+                },
+                aksimerem() {
+                    this.melek = false
+                    this.merem = true
+                },
+                aksimelek() {
+                    this.melek = true
+                    this.merem = false
                 },
 
-            } 
-     
-        }) 
+            }
+
+        })
     </script>
     <!-- <script src="apps.js"></script> -->
 </body>
+
 </html>

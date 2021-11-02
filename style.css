@@ -1,134 +1,138 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-.bg-login{
-    background: url('img/bg-login.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+.bg-login {
+  background: url('img/bg-login.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
-.bg-login::after{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.bg-login::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 999;
-    width: 370px;
-    padding: 60px 32px ;
-    background: #fff;
-    box-shadow: 0px 67px 162px rgba(0, 0, 0, 0.07), 0px 20.1985px 48.8383px rgba(0, 0, 0, 0.0462017), 0px 8.38944px 20.2849px rgba(0, 0, 0, 0.0363793), 0px 3.0343px 7.33666px rgba(0, 0, 0, 0.0255597);
-    border-radius: 15px;
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 999;
+  width: 450px;
+  padding: 60px 32px;
+  background: #fff;
+  box-shadow: 0px 67px 162px rgba(0, 0, 0, 0.07),
+    0px 20.1985px 48.8383px rgba(0, 0, 0, 0.0462017),
+    0px 8.38944px 20.2849px rgba(0, 0, 0, 0.0363793),
+    0px 3.0343px 7.33666px rgba(0, 0, 0, 0.0255597);
+  border-radius: 15px;
 }
-.logo{
-    position: relative;
-    height: 200px;
-    padding-bottom: 28px;
+.logo {
+  position: relative;
+  height: 200px;
+  padding-bottom: 28px;
 }
-.field{
-    position: relative;
-    height: 45px;
-    width: 100%;
-    display: flex;
+.field {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
 }
-.stroke{
-    border: 1px solid #E3E5E6;
-    border-radius: 8px;
+.stroke {
+  border: 1px solid #e3e5e6;
+  border-radius: 8px;
 }
-.field input{
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #222;
-    font-size: 14px;
-    font-weight: 300;
+.field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 14px;
+  font-weight: 300;
 }
-.field span{
-    color: rgb(82, 82, 82);
-    width: 38px;
-    line-height: 45px;
-    font-size: 12px;
+.field span {
+  color: rgb(82, 82, 82);
+  width: 38px;
+  line-height: 45px;
+  font-size: 12px;
 }
-.space{
-    margin-top: 12px;    
+.space {
+  margin-top: 12px;
 }
-.forgot{
-    font-size: 12px;
-    text-align: left;
-    color: #222;
-    margin: 12x 0;
+.forgot {
+  font-size: 12px;
+  text-align: left;
+  color: #222;
+  margin: 12x 0;
+  margin-top: 12px;
 }
-.forgot a{
-    color: #222;
-    text-decoration: none;
+.forgot a {
+  color: #222;
+  text-decoration: none;
 }
-.forgot:hover a{
-    text-decoration: underline;
+.forgot:hover a {
+  text-decoration: underline;
 }
-input[type="submit"]{
-    color: white;
-    background-color: #19BF5B;
-    border-radius: 25px;
-    margin-top: 18px;
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
+input[type='submit'] {
+  color: white;
+  background-color: #19bf5b;
+  border-radius: 25px;
+  margin-top: 18px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
 }
-input[type="submit"]:hover{
-    background-color: #16ab51;
+input[type='submit']:hover {
+  background-color: #16ab51;
 }
-.login{
-    color: #222;
-    position: relative;
-    font-size: 12px;
-    margin-top: 58px;
+.login {
+  color: #222;
+  position: relative;
+  font-size: 12px;
+  margin-top: 50px;
 }
-.link{
-    display: flex;
-    justify-content: center;
+.link {
+  display: flex;
+  justify-content: center;
 }
-.google, .apple{
-    width: 42px;
-    height: 42px;
-    margin: 28px 12px 0 12px;
-    padding: 8px;
-    color: #16ab51;
-    border: 1.2px solid #19BF5B;
-    border-radius: 8px;
-    cursor: pointer;
-    position: center;
+.google,
+.apple {
+  width: 42px;
+  height: 42px;
+  margin: 28px 12px 0 12px;
+  padding: 8px;
+  color: #16ab51;
+  border: 1.2px solid #19bf5b;
+  border-radius: 8px;
+  cursor: pointer;
+  position: center;
 }
-.google:hover{
-    background-color:rgba(163, 229, 189, 0.2);
+.google:hover {
+  background-color: rgba(163, 229, 189, 0.2);
 }
-.apple:hover{
-    background-color: rgba(163, 229, 189, 0.2);
+.apple:hover {
+  background-color: rgba(163, 229, 189, 0.2);
 }
-.show, .hide_btn {
-    position: absolute;
-    right: 4px;
-    font-size: 14px;
-    color: rgb(82, 82, 82);
-    cursor: pointer;
-    /* display: none; */
+.show,
+.hide_btn {
+  position: absolute;
+  right: 4px;
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  cursor: pointer;
+  /* display: none; */
 }
 /* .password:valid ~ .show{
     display: block;
 } */
-
-

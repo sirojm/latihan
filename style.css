@@ -125,10 +125,10 @@ input[type="submit"]:hover{
     font-size: 14px;
     color: rgb(82, 82, 82);
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
-.password:valid ~ .show{
+/* .password:valid ~ .show{
     display: block;
-}
+} */
 
 

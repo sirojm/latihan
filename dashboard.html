@@ -28,32 +28,30 @@
         </div>
         <ul class="nav_list">
             <li>
-                
-                    <i class='bx bx-search' ></i>
-                    <input type="text" placeholder="search...">
-                
-                <!-- <span class="tooltip">Dasboard</span> -->
+                <i class='bx bx-search' ></i>
+                <input type="text" placeholder="search...">
+                <span class="tooltip">search</span>
             </li>
             <li class="berHover">
                 <a href="#">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
-                <!-- <span class="tooltip">Dasboard</span> -->
+                <span class="tooltip">Dashboard</span>
             </li>
             <li class="berHover">
                 <a href="#">
                     <i class='bx bx-lock' ></i>
                     <span class="links_name">Ubah Password</span>
                 </a>
-                <!-- <span class="tooltip">Dasboard</span> -->
+                <span class="tooltip">Password</span>
             </li>
             <li class="berHover">
                 <a href="#">
                     <i class='bx bx-book-open' ></i>
                     <span class="links_name">FAQ</span>
                 </a>
-                <!-- <span class="tooltip">Dasboard</span> -->
+                <span class="tooltip">FAQ</span>
             </li>
             <li>
                 <a href="#">
@@ -64,7 +62,7 @@
                 <div class="toggle">
                     <input type="checkbox" name="" id="">
                 </div>
-                <!-- <span class="tooltip">Dasboard</span> -->
+                <span class="tooltip">Mode Gelap</span>
             </li>
         </ul>
         <div class="profile_content">
@@ -127,5 +125,19 @@
             </div>
         </div>
     </div>
+    <script>
+
+        let btn = document.querySelector("#btn_menu");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector(".bx-search");
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+        searchBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+
+    </script>
 </body>
 </html>

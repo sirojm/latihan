@@ -17,25 +17,43 @@ body{
     top: 0;
     left: 0;
     height: 100%;
-    width: 280px;
+    width: 78px;
     background: #fff;
     padding: 6px 14px;
+    transition: all 0.5s ease;
     /* border-right: 1px solid #222; */
 }
-.logo_content, .logo_name{
+.sidebar.active{
+    width: 280px;
+}
+.sidebar .logo_content, .logo_name{
     display: flex;
     height: 50px;
     width: 100%;
+    /* opacity: 0; */
+    pointer-events: auto;
+}
+.sidebar.active .logo_content, .logo_name{
+    opacity: 1;
+    pointer-events: auto;
 }
 .logo_img{
     width: 50px;
     height: 50px;
+    opacity: 0;
+}
+.sidebar.active .logo_img{
+    opacity: 1;
 }
 .namaLogo{
     /* padding: 6px 10px; */
     margin-left: 12px;
     line-height: 24px;
     color: #222;
+    opacity: 0;
+}
+.sidebar.active .namaLogo{
+    opacity: 1;
 }
 .namaLogo h6{
     font-weight: 600;
@@ -43,7 +61,7 @@ body{
 }
 .sidebar #btn_menu{
     position: absolute;
-    left: 90%;
+    left: 50%;
     top: 6px;
     font-size: 20px;
     height: 50px;
@@ -51,6 +69,9 @@ body{
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+}
+.sidebar.active #btn_menu{
+    left: 90%;
 }
 .sidebar ul{
     margin-top: 48px;
@@ -62,6 +83,31 @@ body{
     margin: 0 5px;
     list-style-type: none;
     line-height: 50px;
+}
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+.sidebar.active ul li .tooltip{
+    display: none;
+
+}
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
 }
 .sidebar ul li input{
     position: absolute;
@@ -82,7 +128,12 @@ body{
     position: absolute;
     z-index: 99;
     /* font-size: 22px; */
-
+    transition: all 0.2s ease;
+}
+.sidebar ul li .bx-search:hover{
+    background: #19BF5B;
+    color: #fff;
+    height: 50px;
 }
 .sidebar ul li a{
     color: #222;
@@ -91,6 +142,7 @@ body{
     text-decoration: none;
     transition: all 0.4s ease-in-out;
     border-radius: 12px;
+    white-space: nowrap;
 }
 .sidebar ul .berHover:hover{
     background: rgba(28, 172, 86, 0.4);
@@ -102,6 +154,9 @@ body{
 }
 .links_name{
     font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
 }
 .sidebar ul li i{
     height: 50%;
@@ -109,6 +164,10 @@ body{
     border-radius: 12px;
     line-height: 50px;
     text-align: center;
+}
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
 }
 .sidebar .profile_content{
     position: absolute;
@@ -127,6 +186,13 @@ body{
 .profile_content .profile .profile_detail{
     display: flex;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_detail{
+    opacity: 1;
+    pointer-events: auto;
 }
 .profile .profile_detail img{
     height: 45px;
@@ -147,13 +213,18 @@ body{
 }
 .profile #log_out{
     position: absolute;
-    left: 88%;
     bottom: 5px;
+    left: 50%;
     transform: translateX(-50%);
     min-height: 50px;
     line-height: 50px;
     font-size: 20px;
     border-radius: 12px;
+    text-align: center;
+}
+.sidebar.active .profile #log_out{
+    left: 88%;
+
 }
 
 /* css toggle */
@@ -167,6 +238,11 @@ body{
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.sidebar.active .toggle{
+    opacity: 1;
 }
 input[type="checkbox"]{
     position: relative;
@@ -200,9 +276,16 @@ input:checked[type="checkbox"]::before{
 .content{
     position: absolute;
     height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ .content{
     width: calc(100% - 280px);
     left: 280px;
+
 }
+
 .content .isi_content{
     margin-top: 22px;
     margin-left: 38px;

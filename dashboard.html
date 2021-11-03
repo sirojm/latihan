@@ -130,11 +130,15 @@
         let btn = document.querySelector("#btn_menu");
         let sidebar = document.querySelector(".sidebar");
         let searchBtn = document.querySelector(".bx-search");
+        let darkBtn = document.querySelector(".bx-moon");
 
         btn.onclick = function() {
             sidebar.classList.toggle("active");
         }
         searchBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+        darkBtn.onclick = function() {
             sidebar.classList.toggle("active");
         }
 

@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- icon -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
     <script src="https://kit.fontawesome.com/87bcb74da6.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -126,7 +127,6 @@
         </div>
     </div>
     <script>
-
         let btn = document.querySelector("#btn_menu");
         let sidebar = document.querySelector(".sidebar");
         let searchBtn = document.querySelector(".bx-search");
@@ -141,7 +141,9 @@
         darkBtn.onclick = function() {
             sidebar.classList.toggle("active");
         }
-
+        $(document).ready(function() {
+            $('.sidebar').addClass('active');
+        });
     </script>
 </body>
 </html>

@@ -141,8 +141,9 @@ body{
     background: #19BF5B;
     color: #fff;
     height: 50px;
-    border-radius: 12px; */
-}
+    border-radius: 12px; 
+}*/
+
 .sidebar.active ul .bx-moon{
     background: #fff;
 }

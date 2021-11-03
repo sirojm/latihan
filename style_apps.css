@@ -10,6 +10,7 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
+    background: #F8F9FA;
 }
 .sidebar{
     position: fixed;
@@ -19,7 +20,7 @@ body{
     width: 280px;
     background: #fff;
     padding: 6px 14px;
-    border-right: 1px solid #222;
+    /* border-right: 1px solid #222; */
 }
 .logo_content, .logo_name{
     display: flex;
@@ -74,10 +75,13 @@ body{
     background: rgb(246, 246, 246, 0.6);
     padding-left: 50px;
 }
+.bx{
+    font-size: 20px;
+}
 .sidebar ul li .bx-search{
     position: absolute;
     z-index: 99;
-    font-size: 22px;
+    /* font-size: 22px; */
 
 }
 .sidebar ul li a{
@@ -88,9 +92,13 @@ body{
     transition: all 0.4s ease-in-out;
     border-radius: 12px;
 }
-.sidebar ul li a:hover{
+.sidebar ul .berHover:hover{
     background: rgba(28, 172, 86, 0.4);
 
+}
+.berHover{
+    border-radius: 12px;
+    transition: all 0.4s ease-in-out;
 }
 .links_name{
     font-size: 16px;
@@ -148,12 +156,69 @@ body{
     border-radius: 12px;
 }
 
-/* toggle */
+/* css toggle */
 .toggle{
-    background: #000;
-    /* position: relative;
-    left: 88%;
-    transform: translateX(-50%); */
+    position: absolute;
+    left: 90%;
+    top: 13px;
+    font-size: 20px;
+    height: 24px;
+    width: 48px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
 }
+input[type="checkbox"]{
+    position: relative;
+    -webkit-appearance: none;
+    background: #E3E5E5;
+    border-radius: 20px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+input:checked[type="checkbox"]{
+    background: #19BF5B;
+    transition: 0.5s;
+}
+input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+input:checked[type="checkbox"]::before{
+    left: 26px;
+}
+/* css toggle */
 
-/* toggle */
+.content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 280px);
+    left: 280px;
+}
+.content .isi_content{
+    margin-top: 22px;
+    margin-left: 38px;
+    margin-right: 38px;
+    /* width: 95%; */
+    /* height: 100%; */
+    background: #fff;
+
+}
+/* slideShowStart */
+.isi_content  .slide_show .slide{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 380px;
+    border-radius: 12px;
+}
+/* slideShowEnd */

@@ -133,7 +133,12 @@ input[type='submit']:hover {
   cursor: pointer;
 }
 
-
+@media (max-width: 600px){
+  .content{
+      width: 80%;
+      padding: 50px 26px ;
+  }
+}
 
 /* sideBar style */
 

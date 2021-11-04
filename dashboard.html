@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style_apps.css">
+    <link rel="stylesheet" href="responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- icon -->
@@ -82,6 +83,9 @@
             </div>
         </div>
     </div>
+    <div class="btn-burger-menu">
+        <i class="fas fa-bars" id="btn_burger"></i>
+    </div>
     <!-- sidebar-end -->
     <div class="content">
         <div class="isi_content">
@@ -134,6 +138,7 @@
         let sidebar = document.querySelector(".sidebar");
         let searchBtn = document.querySelector(".bx-search");
         let darkBtn = document.querySelector(".bx-moon");
+        let burgerBtn = document.querySelector("#btn_burger");
 
         btn.onclick = function () {
             sidebar.classList.toggle("active");
@@ -142,6 +147,9 @@
             sidebar.classList.toggle("active");
         }
         darkBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+        burgerBtn.onclick = function () {
             sidebar.classList.toggle("active");
         }
         // $(document).ready(function () {

@@ -12,6 +12,15 @@ body {
   overflow: hidden;
   background: #f8f9fa;
 }
+.btn-burger-menu{
+  color: #222;
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-size: 20px;
+  display: none;
+  transition: all 0.5s ease;
+}
 .sidebar {
   position: fixed;
   top: 0;
@@ -24,7 +33,7 @@ body {
   /* border-right: 1px solid #222; */
 }
 .sidebar.active {
-  width: 280px;
+  width: 240px;
 }
 .sidebar .logo_content,
 .logo_name {

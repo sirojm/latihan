@@ -1,6 +1,29 @@
-@media (max-width: 600px){
-    .content{
-        width: 80%;
-        padding: 50px 26px ;
+@media (max-width: 800px){
+    .btn-burger-menu{
+        display: block;
     }
+    .sidebar{
+        display: none;
+        z-index: 999;
+        
+    }
+    .content{
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 0;
+        background: red;
+    }
+    .sidebar.active ~ .content{
+        width: 100%;
+        left: 0;
+    }
+    .sidebar.active .btn-burger-menu{
+        display: none;
+    }
+    .sidebar.active{
+        display: block;
+        transition: all 0.5s ease;
+    }
+
 }

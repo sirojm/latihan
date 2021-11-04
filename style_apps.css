@@ -301,8 +301,8 @@ input:checked[type='checkbox']::before {
   transition: all 0.5s ease;
 }
 .sidebar.active ~ .content {
-  width: calc(100% - 280px);
-  left: 280px;
+  width: calc(100% - 240px);
+  left: 240px;
 }
 
 .content .isi_content {

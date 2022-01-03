@@ -135,8 +135,14 @@ input[type='submit']:hover {
 
 @media (max-width: 600px){
   .content{
-      width: 80%;
+      width: 75%;
       padding: 50px 26px ;
+  }
+}
+@media (max-height:700px) {
+  .content{
+    /* width: 80%; */
+    height: auto;
   }
 }
 

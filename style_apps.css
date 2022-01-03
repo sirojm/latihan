@@ -5,6 +5,20 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+:root{
+  color1: #F8F9FA;
+  color2: #ffffff;
+  color3: #F6F6F6;
+  color4: #090A0A;
+  color5: #909395;
+}
+.drak-mode{
+  color1: #232331;
+  color2: #161622;
+  color3: #1F1F29;
+  color4: #ffffff;
+  color5: #E8EAEC;
+}
 body {
   position: relative;
   min-height: 100vh;
@@ -31,8 +45,14 @@ body {
   padding: 6px 14px;
   transition: all 0.5s ease;
   z-index: 999;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* overflow-y: auto; */
   /* border-right: 1px solid #222; */
 }
+/* .nav_list{
+  overflow-y: auto;
+} */
 .sidebar.active {
   width: 240px;
 }
@@ -191,6 +211,10 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+/* .profile_content{
+  position: fixed;
+  margin-bottom: 0;
+} */
 .sidebar .profile_content {
   position: absolute;
   color: #222;

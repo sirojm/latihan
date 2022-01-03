@@ -106,19 +106,23 @@
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br>
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-
+                <div class="dotBtn" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>          
             <div class="list_apps">
-                <div class="title_content"></div>
-                <div class="applikasi"></div>
+                <div class="title_content">
+                    <a>Aplikasi Diizinkan</a>
+                </div>
+                <div class="applikasi">
+                    <div class="apps"></div>
+                    <div class="apps"></div>
+                    <div class="apps"></div>
+                    <div class="apps"></div>
+                    <div class="apps"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -128,13 +132,14 @@
         let searchBtn = document.querySelector(".bx-search");
         let darkBtn = document.querySelector(".bx-moon");
         let burgerBtn = document.querySelector("#btn_burger");
+        let btnAktif = document.querySelector(".berHover")
 
         btn.onclick = function () {
             sidebar.classList.toggle("active");
         }
-        searchBtn.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
+        // searchBtn.onclick = function () {
+        //     sidebar.classList.toggle("active");
+        // }
         darkBtn.onclick = function () {
             sidebar.classList.toggle("active");
         }
@@ -168,11 +173,26 @@
             slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+            dots[i].className = dots[i].className.replace(" aktif", "");
         }
         slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+        dots[slideIndex-1].className += " aktif";
         }
+
+        // var slideIndex = 0;
+        // showSlides();
+
+        // function showSlides() {
+        // var i;
+        // var slides = document.getElementsByClassName("slides");
+        // for (i = 0; i < slides.length; i++) {
+        //     slides[i].style.display = "none";
+        // }
+        // slideIndex++;
+        // if (slideIndex > slides.length) {slideIndex = 1}
+        // slides[slideIndex-1].style.display = "block";
+        // setTimeout(showSlides, 5000); // Change image every 2 seconds
+        // }
     </script>
 </body>
 

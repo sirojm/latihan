@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style_apps.css">
     <link rel="stylesheet" href="responsive.css">
-    <link rel="shortcut icon" href="img/Artboard 5.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/Artboard 4.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- icon -->
@@ -38,7 +38,7 @@
                 <input type="text" placeholder="search...">
                 <span class="tooltip">search</span>
             </li>
-            <li class="berHover">
+            <li class="berHover aktifBtn" title="jlkkjjk">
                 <a href="#">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
@@ -90,14 +90,14 @@
     <!-- sidebar-end -->
     <div class="content">
         <div class="isi_content">
-            <div class="slide_show">
+            <!-- <div class="slide_show">
                 <div class="slides fade">
                     <div class="numberText">1/3</div>
                     <img src="img/slide2.jpg" style="width: 100%;">
                 </div>
                 <div class="slides fade">
                     <div class="numberText">2/3</div>
-                    <img src="img/slide3.jpg" style="width: 100%;">
+                    <img src="img/slide1.jpg" style="width: 100%;">
                 </div>
                 <div class="slides fade">
                     <div class="numberText">3/3</div>
@@ -111,8 +111,42 @@
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
-            </div>          
-            <div class="list_apps">
+            </div>           -->
+            <div class="slider">
+                <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                    <div class="slide first">
+                        <img src="img/Slide1.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="img/Slide2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="img/Slide4.jpg" alt="">
+                    </div>
+                    <!--slide images end-->
+                </div>
+                <!--automatic navigation start-->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+                <!--automatic navigation end-->
+                <!--manual navigation start-->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+                <!--manual navigation end-->
+            </div>
+        <div class="list_apps">
                 <div class="title_content">
                     <a>Aplikasi Diizinkan</a>
                 </div>
@@ -126,73 +160,47 @@
             </div>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         let btn = document.querySelector("#btn_menu");
         let sidebar = document.querySelector(".sidebar");
         let searchBtn = document.querySelector(".bx-search");
         let darkBtn = document.querySelector(".bx-moon");
         let burgerBtn = document.querySelector("#btn_burger");
-        let btnAktif = document.querySelector(".berHover")
 
         btn.onclick = function () {
             sidebar.classList.toggle("active");
         }
-        // searchBtn.onclick = function () {
-        //     sidebar.classList.toggle("active");
-        // }
-        darkBtn.onclick = function () {
+        searchBtn.onclick = function () {
             sidebar.classList.toggle("active");
         }
         burgerBtn.onclick = function () {
             sidebar.classList.toggle("active");
         }
-        // $(document).ready(function () {
-        //     $('.sidebar').addClass('active');
-        // });
 
-        var slideIndex = 1;
-        showSlides(slideIndex);
+        var btnContainer = document.getElementById("nav_list")
+        var btns = btnContainer.getElementsByClassName("berHover")
 
-        // Next/previous controls
-        function plusSlides(n) {
-        showSlides(slideIndex += n);
+        for (var i = 0; i < btns.length; i++){
+            btns[i].addEventListener('click', function () {
+                var current = document.getElementsByClassName("aktifBtn");
+                current[0].className = current[0].className.replace("aktifBtn");
+                this.className += " aktifBtn";
+            })
         }
 
-        // Thumbnail image controls
-        function currentSlide(n) {
-        showSlides(slideIndex = n);
-        }
+        
 
-        function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" aktif", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " aktif";
-        }
+        // slideShow star
+        var counter = 1;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 3) {
+                    counter = 1;
+                }
+            }, 2000);
 
-        // var slideIndex = 0;
-        // showSlides();
-
-        // function showSlides() {
-        // var i;
-        // var slides = document.getElementsByClassName("slides");
-        // for (i = 0; i < slides.length; i++) {
-        //     slides[i].style.display = "none";
-        // }
-        // slideIndex++;
-        // if (slideIndex > slides.length) {slideIndex = 1}
-        // slides[slideIndex-1].style.display = "block";
-        // setTimeout(showSlides, 5000); // Change image every 2 seconds
-        // }
+        // slideShow End
     </script>
 </body>
 

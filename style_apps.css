@@ -44,7 +44,7 @@ body {
   background: #fff;
   padding: 6px 14px;
   transition: all 0.5s ease;
-  z-index: 999;
+  /* z-index: 9; */
   overflow-y: auto;
   overflow-x: hidden;
   /* overflow-y: auto; */
@@ -73,9 +73,11 @@ body {
   width: 50px;
   height: 50px;
   opacity: 0;
+  transition: all 0.2s ease
 }
 .sidebar.active .logo_img {
   opacity: 1;
+  transition: all 0.2s ease
 }
 .namaLogo {
   /* padding: 6px 10px; */
@@ -83,13 +85,16 @@ body {
   line-height: 24px;
   color: #222;
   opacity: 0;
+  transition: all 0.3s ease
 }
 .sidebar.active .namaLogo {
   opacity: 1;
+  transition: all 0.3s ease
 }
 .namaLogo h6 {
   font-weight: 600;
   line-height: 12px;
+  
 }
 .sidebar #btn_menu {
   position: absolute;
@@ -107,6 +112,7 @@ body {
 }
 .sidebar ul {
   margin-top: 48px;
+  /* z-index: 9; */
 }
 .sidebar ul li {
   position: relative;
@@ -116,7 +122,32 @@ body {
   list-style-type: none;
   line-height: 50px;
 }
-.sidebar ul li .tooltip {
+
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  margin: 0;
+  /* font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word; */
+  opacity: 0;
+}
+
+.sidebar li .tooltip {
   position: absolute;
   left: 122px;
   top: 0;
@@ -130,15 +161,18 @@ body {
   transition: 0s;
   opacity: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
   display: block;
 }
-.sidebar.active ul li .tooltip {
-  display: none;
-}
-.sidebar ul li:hover .tooltip {
-  transition: all 0.5s ease;
+.sidebar li:hover .tooltip {
   opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
   top: 50%;
+  /* transform: translateY(-50%); */
+}
+.sidebar.active li .tooltip {
+  display: none;
 }
 .sidebar ul li input {
   position: absolute;
@@ -158,7 +192,7 @@ body {
 }
 .sidebar ul li .bx-search {
   position: absolute;
-  z-index: 99;
+  z-index: 999;
   /* font-size: 22px; */
   transition: all 0.2s ease;
 }
@@ -194,6 +228,14 @@ body {
   border-radius: 12px;
   transition: all 0.4s ease-in-out;
 }
+.sidebar ul .aktifBtn{
+  background: #19bf5b;
+}
+
+.sidebar ul .aktifBtn a{
+  color: #fff;
+}
+
 .links_name {
   font-size: 16px;
   opacity: 0;
@@ -236,10 +278,12 @@ body {
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
+  transition: all 0.2s ease
 }
 .sidebar.active .profile .profile_detail {
   opacity: 1;
   pointer-events: auto;
+  transition: all 0.5s ease
 }
 .profile .profile_detail img {
   height: 45px;
@@ -332,7 +376,7 @@ input:checked[type='checkbox']::before {
 }
 
 .content .isi_content {
-  margin-top: 22px;
+  /* margin-top: 22px; */
   margin-left: 12px;
   margin-right: 12px;
   /* width: 95%; */
@@ -340,30 +384,115 @@ input:checked[type='checkbox']::before {
 }
 
 .isi_content{
+  padding-top: 22px;
   height: 100%;
   overflow: auto;
 }
 
+/* sliderStrat */
+.slider{
+  width: 100%;
+  overflow: hidden;
+  /* border-radius: 10px; */
+}
+.slides{
+  width: 500%;
+  /* height: 500px; */
+  display: flex;
+}
+.slides input{
+  display: none;
+}
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+.slide img{
+  width: 100%;
+  /* border-radius: 10px; */
+  /* height: 500px; */
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+.manual-btn{
+  border: 2px solid #f8f9fa;
+  padding: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+.manual-btn:not(:last-child){
+  margin-right: 10px;
+}
+.manual-btn:hover{
+  background: #f8f9fa;
+}
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: -40px;
+}
+.navigation-auto div{
+  border: 2px solid #f8f9fa;
+  padding: 4px;
+  border-radius: 10px;
+  transition: 1s;
+}
+.navigation-auto div:not(:last-child){
+  margin-right: 10px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #f8f9fa;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #f8f9fa;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #f8f9fa;
+}
+/* sliderEnd */
 
 /* slideShowStart */
-.slides img {
+/* .slides img {
   height: 380px;
-}
-.slide_show{
+} */
+/* .slide_show{
   width: 100%;
-  height: 380px;
   position: relative;
 }
 .slides{
+  width: 100%;
   display: none;
 }
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 45%;
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  margin-top: -10px;
+  padding: 10px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -389,7 +518,7 @@ input:checked[type='checkbox']::before {
 .dotBtn{
   position: absolute;
   align-items: center;
-  top: 90%;
+  top: 85%;
   right: 50%;
 }
 .dot {
@@ -422,7 +551,7 @@ input:checked[type='checkbox']::before {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
-}
+} */
 /* .isi_content .slide_show .slide {
   justify-content: center;
   align-items: center;
@@ -436,7 +565,7 @@ input:checked[type='checkbox']::before {
 
 .list_apps{
   margin-top: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   width: 100%;
 }
 .title_content{
@@ -452,7 +581,7 @@ input:checked[type='checkbox']::before {
 }
 .apps{
   background: #fff;
-  width: 220px;
+  width: 240px;
   height: 280px;
   border-radius: 10px;
   margin-right: 20px;

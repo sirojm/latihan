@@ -580,11 +580,10 @@ input:checked[type='checkbox']::before {
   align-content: space-between;
 }
 .apps{
-  background: #fff;
-  width: 240px;
+  background: #000;
+  width: 90%;
   height: 280px;
   border-radius: 10px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin:10px auto 10px auto;
 }
 /* list apps end */

@@ -130,21 +130,21 @@
                         <img src="img/Slide4.jpg" alt="">
                     </div>
                     <!--slide images end-->
+                    <!--automatic navigation start-->
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                    </div>
+                    <!--automatic navigation end-->
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->
                 </div>
-                <!--automatic navigation start-->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                </div>
-                <!--automatic navigation end-->
-                <!--manual navigation start-->
-                <div class="navigation-manual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                </div>
-                <!--manual navigation end-->
             </div>
         <div class="list_apps">
                 <div class="title_content">
@@ -177,16 +177,16 @@
             sidebar.classList.toggle("active");
         }
 
-        var btnContainer = document.getElementById("nav_list")
-        var btns = btnContainer.getElementsByClassName("berHover")
+        // var btnContainer = document.getElementById("nav_list")
+        // var btns = btnContainer.getElementsByClassName("berHover")
 
-        for (var i = 0; i < btns.length; i++){
-            btns[i].addEventListener('click', function () {
-                var current = document.getElementsByClassName("aktifBtn");
-                current[0].className = current[0].className.replace("aktifBtn");
-                this.className += " aktifBtn";
-            })
-        }
+        // for (var i = 0; i < btns.length; i++){
+        //     btns[i].addEventListener('click', function () {
+        //         var current = document.getElementsByClassName("aktifBtn");
+        //         current[0].className = current[0].className.replace("aktifBtn");
+        //         this.className += " aktifBtn";
+        //     })
+        // }
 
         
 
@@ -198,7 +198,7 @@
                 if (counter > 3) {
                     counter = 1;
                 }
-            }, 2000);
+            }, 5000);
 
         // slideShow End
     </script>

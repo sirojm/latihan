@@ -418,7 +418,7 @@ input:checked[type='checkbox']::before {
 .navigation-manual{
   position: absolute;
   width: 100%;
-  margin-top: -40px;
+  margin-top: 24%;
   display: flex;
   justify-content: center;
 }
@@ -450,7 +450,7 @@ input:checked[type='checkbox']::before {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: -40px;
+  margin-top: 24%;
 }
 .navigation-auto div{
   border: 2px solid #f8f9fa;
